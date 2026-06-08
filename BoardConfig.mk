@@ -119,8 +119,8 @@ BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 BOARD_KERNEL_CMDLINE := \
     disable_dma32=on \
     sysctl.kernel.firmware_config.force_sysfs_fallback=1 \
-    bootinfo.fingerprint=$(LINEAGE_VERSION) \
-    swinfo.fingerprint=$(LINEAGE_VERSION) \
+    bootinfo.fingerprint=$(VOLTAGE_VERSION) \
+    swinfo.fingerprint=$(VOLTAGE_VERSION) \
     androidboot.init_fatal_reboot_target=recovery
 
 BOARD_BOOTCONFIG := \
@@ -210,7 +210,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
-include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+include device/voltage/sepolicy/libperfmgr/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
